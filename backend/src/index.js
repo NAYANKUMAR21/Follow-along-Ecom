@@ -3,8 +3,9 @@ if (process.env.NODE_ENV !== 'PRODUCTION') {
     path: './src/config/.env',
   });
 }
-const connectDatabase = require('./DB/database.js');
-const app = require('./app.js');
+import connectDatabase from './DB/database.js';
+import app from './app.js';
+
 const PORT = process.env.PORT;
 
 const server = app.listen(PORT, async () => {
