@@ -13,7 +13,8 @@
    1. tailwind CSS
    2. React (npm create vite@latest frontend)
 2. setting up of the backend with following commands and packages
-    npm init || npm init -y
+   npm init || npm init -y
+
    1. express (npm i express)
    2. mongoose (npm i mongoose)
    3. cors (npm i cors)
@@ -23,3 +24,13 @@
    mongoose() config the database with backend
    cors - Allowing access to Cross origin website or requests.
    nodemon - monitoring and watching of the backend nodejs application. -->
+
+## Milstone 3
+
+1. Setting up of nodejs sevrer and handling the api requests.
+2. Connect your application to MongoDB to store and manage data.
+3. connetion between Database and server.
+4. Error Handler (these handler rectify where has the error occured filename.js)
+5.
+
+<!-- express - API routes or endpoints  -->
