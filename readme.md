@@ -34,3 +34,9 @@
 5.
 
 <!-- express - API routes or endpoints  -->
+
+## Milestone 4
+
+1. User Model for our database, (Done)
+2. setting up controllers to handle user-related data,
+3. enabling file uploads using Multer.
