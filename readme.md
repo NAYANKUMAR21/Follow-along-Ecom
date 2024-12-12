@@ -40,3 +40,9 @@
 1. User Model for our database, (Done)
 2. setting up controllers to handle user-related data,
 3. enabling file uploads using Multer.
+
+## Milestone 5
+
+1. Created a signup page
+2. Created validation Object using RegEx
+3. Setup React-Router for the Present Pages
