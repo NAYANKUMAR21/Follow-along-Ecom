@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 function LoginPage() {
   const [credentials, setCreds] = useState({
     email: '',
@@ -15,7 +15,6 @@ function LoginPage() {
   };
   const handleClickLogin = () => {
     // axios request to backend
-    
   };
 
   return (
@@ -92,6 +91,9 @@ function LoginPage() {
               Sign in
             </button>
           </div>
+          <p className="text-center">
+            Don't have an account ? <Link to={'/signup'}>Sign up</Link>
+          </p>
         </form>
       </div>
     </div>
