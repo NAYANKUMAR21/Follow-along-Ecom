@@ -65,7 +65,12 @@
    2. check if the user entry is present in DB also compare the password.
       1. If Yes-> create a token and send that as cookies 
       2. If No-> return saying Signup first
-   
+
+
+## Milestone 8
+1. Card Componet
+2. Display of all the products with dummy data in Home page.
+
 
 
 
