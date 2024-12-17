@@ -46,3 +46,27 @@
 1. Created a signup page
 2. Created validation Object using RegEx
 3. Setup React-Router for the Present Pages
+
+
+## Milestone 7
+ - Created two routes signup and login
+ - For Signup:
+   1. Take the data sent by the user
+   2. const {name, email, password} = req.body
+   3. check if user is already present in the DB
+      1. if Yes-> return saying user is already present , Direct Login
+      2. If No-> 
+         1. Hash the password (Bcrypt.js, argon2.js)
+         2. Create a user and store the name, email, password in DB
+
+
+- For Login:
+   1. Take the data sent const {email, password} = req.body
+   2. check if the user entry is present in DB also compare the password.
+      1. If Yes-> create a token and send that as cookies 
+      2. If No-> return saying Signup first
+   
+
+
+
+
