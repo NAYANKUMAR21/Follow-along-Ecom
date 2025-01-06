@@ -81,3 +81,8 @@
 1. Product Schema
 2. cerate end point to wirte the data into DB.
    1. Cloudinary, multer
+
+## Milestone 11
+
+1. Wirting the GET endpoint to fetch the data from DB and send to the client.
+
