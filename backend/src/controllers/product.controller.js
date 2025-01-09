@@ -11,6 +11,7 @@ const ProductModel = require('../models/Product.model.js');
 //     2. title
 
 const createProductController = async (req, res) => {
+  console.log(process.env.api_key);
   const {
     title,
     description,
@@ -153,12 +154,36 @@ const getSinglePRoductDocumentController = async (req, res) => {
       .status(200)
       .send({ message: 'Product Successfully fetched', data, success: true });
   } catch (er) {
-    return res.status(200).send({ message: er.message, success: false });
+    return res.status(500).send({ message: er.message, success: false });
   }
 };
+
+const deleteSingleProduct = async (req, res) => {
+  const { id } = req.params;
+  console.log('id', id);
+  try {
+    const data = await ProductModel.findOne({ _id: id });
+    console.log(data);
+    if (!data) {
+      return res.status(404).send({ Message: 'Product Not Found' });
+    }
+
+    await ProductModel.findByIdAndDelete({ _id: id });
+    const newData = await ProductModel.find();
+    return res.status(200).send({
+      message: 'Product Successfully fetched',
+      data: newData,
+      success: true,
+    });
+  } catch (er) {
+    return res.status(500).send({ message: er.message, success: false });
+  }
+};
+
 module.exports = {
   createProductController,
   getProductDataController,
   updateProductController,
   getSinglePRoductDocumentController,
+  deleteSingleProduct,
 };
