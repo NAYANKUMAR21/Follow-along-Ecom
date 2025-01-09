@@ -38,6 +38,7 @@ function HomePage() {
                 originalPrice={ele.originalPrice}
                 discountedPrice={ele.discountedPrice}
                 rating={ele.rating}
+                id={ele._id}
               />
             </div>
           );

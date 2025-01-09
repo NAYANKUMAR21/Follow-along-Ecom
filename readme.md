@@ -86,3 +86,19 @@
 
 1. Wirting the GET endpoint to fetch the data from DB and send to the client.
 
+
+
+## Milestone 12
+
+
+
+## Milestone 13 (Updation)
+
+   1. Backend:  PUT route for updateing 
+   2. Frontend: Page for auto filling the updated data [id] except images fetch data from backend and once we have data in frontend we fill the input boxes with that data
+
+
+
+
+
+
