@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const userRouter = require('./routes/user.route.js');
 const productRouter = require('./routes/product.route.js');
 if (process.env.NODE_ENV !== 'PRODUCTION') {
@@ -10,6 +11,7 @@ if (process.env.NODE_ENV !== 'PRODUCTION') {
 const app = express();
 // M6
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   return res.send('Welcome to backend');
