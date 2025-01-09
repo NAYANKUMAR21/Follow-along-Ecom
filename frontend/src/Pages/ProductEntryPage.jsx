@@ -12,7 +12,7 @@ function ProductEntryPage() {
     category: '',
   });
   const [errorInput, setInputError] = useState('');
-  const [Images, setImages] = useState(null);
+  const [Images, setImages] = useState([]);
 
   const handleImageUpload = (e) => {
     const ImagesArray = Array.from(e.target.files);
@@ -66,8 +66,9 @@ function ProductEntryPage() {
     formDataBody.append('quantity', quantity);
     formDataBody.append('rating', rating);
 
+    console.log(Images);
     Images.map((ele) => {
-      formDataBody.append('filepath', ele);
+      formDataBody.append('files', ele);
     });
 
     console.log(formDataBody);

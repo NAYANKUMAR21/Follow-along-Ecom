@@ -11,7 +11,6 @@ const ProductModel = require('../models/Product.model.js');
 //     2. title
 
 const createProductController = async (req, res) => {
-  console.log(process.env.api_key);
   const {
     title,
     description,
@@ -23,6 +22,7 @@ const createProductController = async (req, res) => {
   } = req.body;
 
   try {
+    console.log(req.files, req.body);
     const arrayImage = req.files.map(async (singleFile, index) => {
       return cloudinary.uploader
         .upload(singleFile.path, {
@@ -78,6 +78,7 @@ const getProductDataController = async (req, res) => {
 };
 
 const updateProductController = async (req, res) => {
+  console.log(req.files);
   const {
     title,
     description,
@@ -86,8 +87,6 @@ const updateProductController = async (req, res) => {
     originalPrice,
     quantity,
     category,
-    xyz,
-    abc,
   } = req.body;
   const { id } = req.params;
 
@@ -114,8 +113,8 @@ const updateProductController = async (req, res) => {
             return result.url;
           });
       });
-    const Imagedata = await Promise.all(arrayImage);
-
+    const Imagedata = req.files && (await Promise.all(arrayImage));
+    const UpdatedImages = req.files ? Imagedata : req.body.images;
     const findAndUpdate = await ProductModel.findByIdAndUpdate(
       { _id: id },
       {
@@ -126,7 +125,7 @@ const updateProductController = async (req, res) => {
         originalPrice,
         quantity,
         category,
-        images: Imagedata,
+        images: UpdatedImages,
       },
       {
         new: true,

@@ -14,7 +14,7 @@ function UpdateForm() {
     category: '',
   });
   const [errorInput, setInputError] = useState('');
-  const [Images, setImages] = useState(null);
+  const [Images, setImages] = useState();
 
   const handleImageUpload = (e) => {
     const ImagesArray = Array.from(e.target.files);
@@ -67,12 +67,18 @@ function UpdateForm() {
     formDataBody.append('originalPrice', originalPrice);
     formDataBody.append('quantity', quantity);
     formDataBody.append('rating', rating);
+    console.log(Images);
+    if (Images) {
+      Images?.map((ele) => {
+        formDataBody.append('files', ele);
+      });
+    } else {
+      formDataBody.append('images', formData.images);
+    }
 
-    Images?.map((ele) => {
-      formDataBody.append('filepath', ele);
-    });
-
-    console.log(formDataBody);
+    console.log('formDataBody', formDataBody);
+    console.log('Images', Images);
+    console.log('formData.images', formData);
     // axios request post
     let requestdata = await axios
       .put(
@@ -111,7 +117,8 @@ function UpdateForm() {
       );
       console.log(singleData);
       setFormData(singleData.data.data);
-      setImages(singleData.data.images);
+      setImages(singleData.data.data.images);
+      console.log('Images', Images);
     };
 
     getDataForId();
