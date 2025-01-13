@@ -102,3 +102,7 @@
 ## MileStone 15
 
 1. Added Navbar component (Mobile Responsive with Drop Down)
+
+## MileStone 16
+1. Added Single Page product Details
+2. Created Image Modal Component
