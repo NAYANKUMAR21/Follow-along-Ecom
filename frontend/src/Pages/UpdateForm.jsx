@@ -117,7 +117,7 @@ function UpdateForm() {
       );
       console.log(singleData);
       setFormData(singleData.data.data);
-      setImages(singleData.data.data.images);
+      // setImages(singleData.data.data.images);
       console.log('Images', Images);
     };
 

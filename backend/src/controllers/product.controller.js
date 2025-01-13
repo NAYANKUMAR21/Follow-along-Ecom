@@ -138,6 +138,7 @@ const updateProductController = async (req, res) => {
       UpdatedResult: findAndUpdate,
     });
   } catch (er) {
+    console.log(er.message);
     return res.status(500).send({ message: er.message, success: false });
   }
 };
