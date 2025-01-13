@@ -97,3 +97,8 @@
 
 1.  DELETE route in the backend
 2.  Delete button at the frontend
+
+
+## MileStone 15
+
+1. Added Navbar component (Mobile Responsive with Drop Down)
