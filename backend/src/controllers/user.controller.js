@@ -158,7 +158,11 @@ const login = async (req, res) => {
         return res
           .status(200)
           .cookie('token', token)
-          .send({ message: 'User logged in successfully..', success: true });
+          .send({
+            message: 'User logged in successfully..',
+            success: true,
+            token,
+          });
       }
     );
 
