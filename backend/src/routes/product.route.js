@@ -14,7 +14,7 @@ const upload = multer({ dest: 'temp-uploads/' });
 router.post(
   '/create-product',
   upload.array('files', 5),
-
+  verifyUser,
   createProductController
 );
 router.put(
