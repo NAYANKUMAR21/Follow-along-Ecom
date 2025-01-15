@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ValidationFormObject from '../../validation.js';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 function SignupForm() {
   const [data, setData] = useState({
     name: '',
@@ -53,11 +54,15 @@ function SignupForm() {
     formDataBody.append('name', data.name);
     formDataBody.append('file', data.file);
     try {
-      await axios.post('http://localhost:8080/user/signup');
+      await axios.post('http://localhost:8080/user/signup', formDataBody, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
       //take him to login page
       navigateUser('/login');
     } catch (er) {
-      alert('SOmething wrong happened' + er.message);
+      console.log('SOmething wrong happened' + er.message);
     }
   };
 
