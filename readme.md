@@ -98,11 +98,17 @@
 1.  DELETE route in the backend
 2.  Delete button at the frontend
 
-
 ## MileStone 15
 
 1. Added Navbar component (Mobile Responsive with Drop Down)
 
 ## MileStone 16
+
 1. Added Single Page product Details
 2. Created Image Modal Component
+
+## MileStone 17
+
+1. Cart Schema,
+2. cart route
+3. Cart Controller [get and addToCart]

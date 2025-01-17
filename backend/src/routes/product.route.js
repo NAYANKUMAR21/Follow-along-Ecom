@@ -8,6 +8,7 @@ const {
   getSinglePRoductDocumentController,
   deleteSingleProduct,
 } = require('../controllers/product.controller.js');
+const verifyUser = require('../middlewares/jwt-verify.js');
 const router = express.Router();
 
 const upload = multer({ dest: 'temp-uploads/' });
@@ -28,3 +29,5 @@ router.get('/get-single/:id', getSinglePRoductDocumentController);
 router.delete('/:id', deleteSingleProduct);
 
 module.exports = router;
+
+// route , model , controller
