@@ -5,6 +5,7 @@ if (process.env.NODE !== 'PRODUCTION') {
   });
 }
 
+
 const verifyUser = (req, res, next) => {
   const { token } = req.query;
   console.log(req.query);

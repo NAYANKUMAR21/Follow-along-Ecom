@@ -8,14 +8,14 @@ const {
   getSinglePRoductDocumentController,
   deleteSingleProduct,
 } = require('../controllers/product.controller.js');
+
 const verifyUser = require('../middlewares/jwt-verify.js');
 const router = express.Router();
 
 const upload = multer({ dest: 'temp-uploads/' });
 router.post(
   '/create-product',
-  upload.array('files', 5),
-  verifyUser,
+  [upload.array('files', 5), verifyUser],
   createProductController
 );
 router.put(
