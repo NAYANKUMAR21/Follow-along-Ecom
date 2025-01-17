@@ -6,7 +6,9 @@ if (process.env.NODE !== 'PRODUCTION') {
 }
 
 const verifyUser = (err, req, res, next) => {
-  if (req.body.token) {
+  console.log('token', req.body.token, process.env.SECRET_KEY);
+
+  if (!req.body.token) {
     return res.status(404).send({ message: 'Send token over rqeuest' });
   }
 
