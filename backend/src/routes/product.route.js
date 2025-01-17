@@ -29,3 +29,5 @@ router.get('/get-single/:id', getSinglePRoductDocumentController);
 router.delete('/:id', deleteSingleProduct);
 
 module.exports = router;
+
+// route , model , controller

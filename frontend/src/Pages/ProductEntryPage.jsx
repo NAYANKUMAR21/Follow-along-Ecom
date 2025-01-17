@@ -66,7 +66,6 @@ function ProductEntryPage() {
     formDataBody.append('quantity', quantity);
     formDataBody.append('rating', rating);
     formDataBody.append('token', localStorage.getItem('token'));
-
     console.log(Images);
     Images.map((ele) => {
       formDataBody.append('files', ele);
@@ -74,12 +73,17 @@ function ProductEntryPage() {
 
     console.log(formDataBody);
     // axios request post
+    const token = localStorage.getItem('token');
     let requestdata = await axios
-      .post('http://localhost:8080/product/create-product', formDataBody, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
+      .post(
+        `http://localhost:8080/product/create-product?token=${token}`,
+        formDataBody,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         return res;
