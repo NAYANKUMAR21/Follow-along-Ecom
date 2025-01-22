@@ -121,3 +121,8 @@
 
 1. Added Cart UI
 2. Fetched Cart Details of the User
+
+## milestone 20
+
+1. Added UI for profile route
+2. ceated route for user data
