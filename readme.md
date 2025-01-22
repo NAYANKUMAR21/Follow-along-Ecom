@@ -117,8 +117,7 @@
 
 1. Get Cart Data Route
 
-
-
 ## Milestone 19
+
 1. Added Cart UI
-2. Fetched Cart Details of the User 
+2. Fetched Cart Details of the User
