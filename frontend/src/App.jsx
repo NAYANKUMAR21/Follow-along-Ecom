@@ -9,6 +9,7 @@ import SinglePageProduct from './Pages/SingleProductPage';
 import CartPage from './Pages/CartPage';
 import ProfilePage from './Pages/Profile';
 import Navbar from './component/Navbar/Navbar';
+import AddressCard from './component/AddressComp/AddressCard';
 
 function App() {
   return (
