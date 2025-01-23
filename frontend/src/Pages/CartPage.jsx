@@ -32,7 +32,7 @@ function CardPage() {
               description={singleCartObject.productId.description}
               originalPrice={singleCartObject.productId.originalPrice}
               discountedPrice={singleCartObject.productId.discountedPrice}
-              id={singleCartObject._id}
+              id={singleCartObject.productId._id}
               createdBy={'nayan@k.com'}
             />
           </div>
