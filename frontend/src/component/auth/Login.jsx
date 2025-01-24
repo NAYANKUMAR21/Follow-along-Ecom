@@ -23,7 +23,7 @@ function LoginPage() {
       credentials
     );
     localStorage.setItem('token', response.data.token);
-    console.log(data);
+    // console.log(data);
     navigate('/');
   };
 

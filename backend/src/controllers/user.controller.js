@@ -221,6 +221,42 @@ const AddAddressController = async (req, res) => {
   }
 };
 
+const DeleteAddyController = async (req, res) => {
+  const userId = req.UserId;
+  const { id } = req.params;
+  try {
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res
+        .status(401)
+        .send({ message: 'Un-Authorised please signup', sucess: false });
+    }
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res
+        .status(404)
+        .send({ message: 'Address Id is in-valid', sucess: false });
+    }
+
+    const checkIfUSerPresent = await UserModel.findOne({ _id: userId });
+    if (!checkIfUSerPresent) {
+      return res
+        .status(401)
+        .send({ message: 'Un-Authorised please signup', sucess: false });
+    }
+
+    const response = await UserModel.findOneAndUpdate(
+      { _id: userId },
+      { $pull: { address: { _id: id } } },
+      { new: true }
+    );
+
+    return res
+      .status(201)
+      .send({ message: 'User Address deleted', success: true, response });
+  } catch (er) {
+    return res.status(500).send({ message: er.message, sucess: false });
+  }
+};
+
 module.exports = {
   CreateUSer,
   verifyUserController,
@@ -228,4 +264,5 @@ module.exports = {
   login,
   getUSerData,
   AddAddressController,
+  DeleteAddyController,
 };

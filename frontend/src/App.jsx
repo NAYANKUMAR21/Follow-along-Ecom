@@ -24,6 +24,7 @@ function App() {
         <Route path="/product-details/:id" element={<SinglePageProduct />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/add-address" element={<AddressCard />} />
       </Routes>
     </>
   );
