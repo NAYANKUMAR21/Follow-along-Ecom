@@ -131,3 +131,4 @@
 
 1. Creted page for the Address city, country, address1, address2, adderss3 and address type.
 2. write the end point for the backend to receive and store it in the backend
+

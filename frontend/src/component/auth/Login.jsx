@@ -1,7 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUserEmail } from '../../Redux/User/UserActions';
+import { setEmail } from '../../Redux/User/UsersSlice';
 function LoginPage() {
+  const dispatch = useDispatch();
   const [credentials, setCreds] = useState({
     email: '',
     password: '',
@@ -22,6 +26,9 @@ function LoginPage() {
       'http://localhost:8080/user/login',
       credentials
     );
+    console.log(credentials);
+    dispatch(setUserEmail(credentials.email));
+
     localStorage.setItem('token', response.data.token);
     // console.log(data);
     navigate('/');
