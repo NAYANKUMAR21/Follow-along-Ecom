@@ -132,3 +132,11 @@
 1. Creted page for the Address city, country, address1, address2, adderss3 and address type.
 2. write the end point for the backend to receive and store it in the backend
 
+
+## Milestone 34
+1. Used JWT in login and any communication between  client and the server
+2. stored jwt in cookie
+
+## Milestone 35
+1. deployment server - 
+2. deployment client - 
