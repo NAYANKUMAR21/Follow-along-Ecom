@@ -1,3 +1,4 @@
+const path = require('node:path');
 if (process.env.NODE_ENV !== 'PRODUCTION') {
   require('dotenv').config({
     path: path.join(__dirname, '../config/.env'),
