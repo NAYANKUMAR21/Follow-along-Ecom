@@ -138,5 +138,5 @@
 2. stored jwt in cookie
 
 ## Milestone 35
-1. deployment server - 
-2. deployment client - 
+1. deployment server - https://follow-along-ecom.onrender.com
+2. deployment client - https://ecomfollowalong.vercel.app
