@@ -1,3 +1,12 @@
+<details>
+  <summary>Click to expand</summary>
+  
+  Your hidden content goes here.
+
+</details>
+
+
+
 # Ecommerce Applications
 
 ## Milestone 1: Project Overview
